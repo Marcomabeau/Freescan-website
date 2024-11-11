@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Security Scan</title>
+  <style>
+    /* Dark theme styling */
+    body {
+      background-color: #1b1b1b;
+      color: #e0e0e0;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+    }
+
+    /* Header styling */
+    .header {
+      width: 100%;
+      padding: 20px;
+      text-align: right;
+      box-sizing: border-box;
+    }
+    
+    .header a {
+      color: #1abc9c;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    /* Container styling */
+    .container {
+      width: 100%;
+      max-width: 600px;
+      background-color: #2e2e2e;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    /* Input and button styling */
+    input[type="url"] {
+      width: 80%;
+      padding: 12px;
+      border-radius: 5px;
+      border: 1px solid #444;
+      margin-bottom: 20px;
+      background-color: #333;
+      color: #e0e0e0;
+    }
+
+    input[type="url"]:focus {
+      outline: none;
+      border-color: #1abc9c;
+    }
+
+    button {
+      padding: 12px 24px;
+      border: none;
+      border-radius: 5px;
+      background-color: #1abc9c;
+      color: #fff;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #16a085;
+    }
+
+    /* Results styling */
+    #results {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #3b3b3b;
+      border-radius: 5px;
+      text-align: left;
+      font-size: 0.95em;
+    }
+
+    #results h3 {
+      color: #1abc9c;
+    }
+
+    /* Hide results section initially */
+    #results {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header with Home button -->
+  <div class="header">
+    <a href="/">Home</a>
+  </div>
+
+  <!-- Main container for URL input and scan button -->
+  <div class="container">
+    <h1>Security Scan</h1>
+    <p>Enter a URL below to perform a security check and ensure it's safe.</p>
+    
+    <!-- URL input and Scan button -->
+    <input type="url" id="urlInput" placeholder="https://example.com" required>
+    <button onclick="performScan()">Scan</button>
+
+    <!-- Results section -->
+    <div id="results">
+      <h3>Scan Results:</h3>
+      <p id="resultsContent">The link is safe and secure.</p>
+    </div>
+  </div>
+
+  <script>
+    // Function to simulate a scan and display results
+    function performScan() {
+      const url = document.getElementById("urlInput").value;
+
+      if (!url) {
+        alert("Please enter a valid URL.");
+        return;
+      }
+
+      // Simulate scan process with a setTimeout (replace with real scan logic)
+      document.getElementById("resultsContent").textContent = "Scanning...";
+      document.getElementById("results").style.display = "block";
+
+      setTimeout(() => {
+        // Here, you would normally process the URL and display actual results
+        // Simulated scan result
+        document.getElementById("resultsContent").textContent = 
+          `Scan completed for ${url}. The link is safe and secure. No threats detected.`;
+      }, 2000); // Simulate 2-second scan delay
+    }
+  </script>
+</body>
+</html>
