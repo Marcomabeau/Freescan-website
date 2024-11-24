@@ -4,6 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Digital Security Landing Page</title>
+      <script>
+  document.addEventListener('keydown', function(e) {
+      if (e.key === 'F12') e.preventDefault(); // Block F12
+      if (e.ctrlKey && e.shiftKey && e.key === 'I') e.preventDefault(); // Block Ctrl+Shift+I
+      if (e.ctrlKey && e.shiftKey && e.key === 'C') e.preventDefault(); // Block Ctrl+Shift+C
+      if (e.ctrlKey && e.shiftKey && e.key === 'J') e.preventDefault(); // Block Ctrl+Shift+J
+      if (e.ctrlKey && e.key === 'u') e.preventDefault(); // Block Ctrl+U
+    });
+    document.addEventListener('contextmenu', function(e) {
+      e.preventDefault(); // Disable right-click
+    });
+    document.addEventListener('visibilitychange', function () {
+      if (document.visibilityState === 'hidden') {
+        document.body.style.filter = 'blur(10px)';
+      } else {
+        document.body.style.filter = 'none';
+      }
+    });
+  </script>
     <style>
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
